@@ -157,15 +157,16 @@ button{
     text-align: left;
     color: green;
     font-size: large;
-    padding-left: 4%;
     font-weight: bolder;
+    margin-top: 4%;
+    margin-left: 6%;
 }
 
 .buttonResto p{
     text-align: left;
     text-decoration: none;
     font-family: 'Times New Roman', Times, serif;
-    padding-left: 6%;
+    padding-left: 7%;
     margin-top: -5%;
 }
 
