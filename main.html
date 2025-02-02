@@ -5,28 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaSapp</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-    <!-- Navigation Bar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
     <header class="navbar">
-        <div class="logo">LaSapp</div>
-        <nav>
-            <ul>
-                <li><a href="#">DIRECTORY</a></li>
-                <li><a href="#">INDECISIVE?</a></li>
-                <li><a href="#">LOGIN</a></li>
-            </ul>
-        </nav>
+        <!-- First Header -->
+        <div>
+            <div class="logo">LaSapp</div>
+                <div class="navbarList">
+                    <ul>
+                        <li><a href="#">DIRECTORY</a></li>
+                        <li><a href="#">LOGIN</a></li>
+                        <li><a href="#">REVIEWS</li>
+                    </ul>
+                </div>
+        </div>
+        <!-- Second Header with Search Bar -->
+         <div class="container">
+            <div>
+                <div class="search-container">
+                    <input type="text" placeholder="Looking for Something..." />
+                    <button>
+                    </button>
+                </div>
+            </div>
+         </div>
     </header>
 
-    <!-- Hero Section with Image and Search Bar -->
-    <section class="hero">
-        <div class="search-container">
-            <input type="text" placeholder="Search...">
-            <button type="submit">🔍</button>
+    <!-- Buttons -->
+    <div id="sliders" class="categories">
+        
+        <div>
+            <button id="back" class="button"><<<</button>
         </div>
-    </section>
+
+        <div><button class="selectors">1</button></div>
+        <button class="selectors">2</button>
+        <button class="selectors">3</button>
+        <div><button class="selectors">4</button></div>
+        <button class="selectors">5</button>
+
+        <div>
+            <button id="back" class="button">>>></button>
+        </div>
+    </div>
+
+    <div class="restaurant">
+        <div>
+            <button class="buttonResto">
+                <div class="photopadding">
+                    <img src="FastFood/jolibee.jpg"></img>
+                </div>
+                <div>
+                    <h1>Jolibee - P. Ocampo</h1>
+                </div>
+                <div>
+                    <p> Fast Food, Filipino</p>
+                </div>
+            </button>
+            
+            <button class="buttonResto">
+                <div class="photopadding">
+                    <img src="FastFood/mcdo.jpg"></img>
+                </div>
+                <div><h1>Mcdonalds - Taft Avenue</h1>
+                </div>
+                <div>
+                    <p> Fast Food, American</p>
+                </div>
+            </button>
+        </div>
+        <div>
+            <button class="buttonResto">LAPTOP</button>
+            <button class="buttonResto">PENCIL</button>
+        </div>
+        <div>
+            <button class="buttonResto">SIR ROG</button>
+            <button class="buttonResto">MS NATS</button>
+        </div>
+        <div>
+            <button class="buttonResto">SHIRLEY</button>
+            <button class="buttonResto">ZAMIN</button>
+        </div>
+    </div>
+
 
 </body>
 </html>
