@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .s1{
@@ -69,17 +68,17 @@ header{
 .img_main{
     width: 450px;
     height: 500px;
+    object-fit: cover;
+    /* object-fit: contain; */
 }
 
-.b1{
+/* NONSENSE!!! .b1{
     display: inline-block;
     background-size: 411px 393px;
     background-color: #fafafa;
     height: 24px;
     width: 450px;
-
-    margin-top: -5%;
-}
+} */
 
 /* .like {
     background-position: 0px -319px;
@@ -101,6 +100,7 @@ header{
 footer{
     margin-left: 2%;
     margin-right: 2%;
+    margin-top: 3%;
 }
 
 .date{
