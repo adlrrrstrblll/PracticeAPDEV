@@ -1,0 +1,152 @@
+<!-- main.hbs file -->
+<div class="main">
+  <div class="side-game">
+    <div class="side-item side-item-header"><h3>SOLUTION</h3></div>
+    {{#each solutionSteps}}
+      <div class="side-item">From <b>{{this.from}}</b> to <b>{{this.to}}</b>.</div>
+    {{/each}}
+  </div>
+  <div class="game-container">
+    <div id="win-message">
+      <h1>PLAYER WIN!!!</h1>
+    </div>
+    <div class="main-game">
+      <div class="glass-container">
+        <div id="glass1" class="glass">
+          {{#each (range 8)}}
+            <div class="glass-fill"></div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="glass-container">
+        <div id="glass2" class="glass"></div>
+      </div>
+      <div class="glass-container">
+        <div id="glass3" class="glass"></div>
+      </div>
+    </div>
+    <div class="game-input">
+      <h3>Game Input</h3> <hr/>
+      From <select id="from-input">
+        <option value="1">Glass 1</option>
+        <option value="2">Glass 2</option>
+        <option value="3">Glass 3</option>
+      </select> to <select id="to-input">
+        <option value="1">Glass 1</option>
+        <option value="2">Glass 2</option>
+        <option value="3">Glass 3</option>
+      </select>
+      <button id="pour-button">Pour</button>
+    </div>
+  </div>
+</div>
+
+
+$(document).ready(function () {
+    let glasses = {
+        1: { capacity: 8, current: 8, element: $("#glass1") },
+        2: { capacity: 5, current: 0, element: $("#glass2") },
+        3: { capacity: 3, current: 0, element: $("#glass3") },
+    };
+
+    function updateGlassUI() {
+        Object.keys(glasses).forEach((key) => {
+            let glass = glasses[key];
+            glass.element.empty();
+            for (let i = 0; i < glass.current; i++) {
+                glass.element.append('<div class="glass-fill"></div>');
+            }
+        });
+    }
+
+    function pourLiquid(from, to) {
+        if (from === to) return; // Do nothing if same glass is selected
+
+        let source = glasses[from];
+        let target = glasses[to];
+
+        let amountToPour = Math.min(source.current, target.capacity - target.current);
+
+        if (amountToPour > 0) {
+            source.current -= amountToPour;
+            target.current += amountToPour;
+            updateGlassUI();
+        }
+
+        checkWinCondition();
+    }
+
+    function checkWinCondition() {
+        if (glasses[1].current === 4 && glasses[2].current === 4) {
+            $("#win-message").css("display", "inline-block");
+        }
+    }
+
+    $("#pour-button").click(function () {
+        let from = parseInt($("#from-input").val());
+        let to = parseInt($("#to-input").val());
+        pourLiquid(from, to);
+    });
+
+    updateGlassUI(); // Initialize UI
+});
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+
+  // Initialize the glasses with their capacities and current volume
+  let glasses = {
+      1: {capacity: 8, current: 8, element: $('#glass1')},
+      2: {capacity: 5, current: 0, element: $('#glass2')},
+      3: {capacity: 3, current: 0, element: $('#glass3')}
+  };
+
+  function updateGlass() {
+      Object.keys(glasses).forEach((key) => {
+          let glass = glasses[key];
+          glass.element.empty(); // Clear the glass before updating
+          for (let i = 0; i < glass.current; i++) {
+              glass.element.append('<div class="glass-fill"></div>');
+          }
+      });
+  }
+
+  function pourLiquid(source, destination) {
+      if (source === destination) {
+          return; // Do nothing if pouring into the same glass
+      }
+
+      let src = glasses[source];
+      let des = glasses[destination];
+
+      let amountToPour = Math.min(src.current, des.capacity - des.current);
+
+      if (amountToPour > 0) {
+          src.current -= amountToPour;  // Remove from source
+          des.current += amountToPour;  // Add to destination
+          updateGlass();  // Refresh glass visuals dynamically
+      }
+
+      checkWin();
+  }
+
+  function checkWin() {
+      if (glasses[1].current === 4 && glasses[2].current === 4) {
+          $('#win-message').css('display', 'inline-block');
+      }
+  }
+
+  $("#pour-button").click(function() {
+      let src = parseInt($('#from-input').val());
+      let des = parseInt($('#to-input').val());
+      pourLiquid(src, des);
+  });
+
+  updateGlass(); // Initialize UI on page load
+});
