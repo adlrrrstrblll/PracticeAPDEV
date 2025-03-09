@@ -1,0 +1,50 @@
+.main{
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+}
+
+.center{
+    text-align: center;
+}
+
+.item-parent{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.item-row{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	
+	border: 8px;
+	border-radius: 15px;
+    background-color: black;
+    
+    margin: 1%;
+    width: 31.33%;
+}
+
+.colorFriend{ background-color: LightGreen; }
+.colorEnemy{ background-color: LightPink; }
+.colorAquaintance{ background-color: Gold; }
+
+.item-img{ margin: 8px 16px; }
+
+.item-img > img{ width: 50px; height: 50px; }
+
+.item-desc{
+	margin: 8px 0px; 
+}
+
+.item-name{ 
+	color: DarkSlateBlue;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.item-contact{
+	color: DarkSlateGrey;
+}
+
