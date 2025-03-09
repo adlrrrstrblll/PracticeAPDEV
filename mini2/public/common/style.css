@@ -1,0 +1,87 @@
+body,h1,h3{ margin: 0px; }
+
+.main{
+    margin-top: 1%;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    display: flex;
+}
+
+.side-game{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-item{
+    width: 90%;
+    border-radius: 15px;
+    background-color: PaleGreen;
+    text-align: center;
+    padding: 5px;
+}
+
+.side-item-header{
+    background-color: PaleGoldenRod;
+}
+
+.game-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#win-message{
+    border-radius: 15px;
+    background-color: Gold;
+    text-align: center;
+    padding: 25px;
+    display: none;
+}
+
+.main-game{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.glass-container{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: calc((32px)*8);
+}
+
+.glass{
+    background-color: CornflowerBlue;
+    margin-left: 3%;
+    padding: 1%;
+    border-radius: 5px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.glass-fill{
+    width: 100%;
+    margin-top: 10px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: Yellow;
+}
+
+#glass1{ height:calc((30px)*8); }
+#glass2{ height:calc((30px)*5); }
+#glass3{ height:calc((30px)*3); }
+
+.game-input{
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color: LightBlue;
+    text-align: center;
+    padding: 25px;
+}

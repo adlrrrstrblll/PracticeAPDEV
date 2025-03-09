@@ -1,0 +1,124 @@
+body { 
+    margin: 0px; 
+}
+
+.header, .page-body{
+  display: flex;
+  flex-direction: row;
+}
+
+.header{
+  background: BlanchedAlmond;
+  border-bottom: 1px solid black;
+  margin-bottom: 8px;
+}
+
+.header-logo { 
+    width: 25%; 
+    text-align: center; 
+}
+.header-logo > img { 
+    width: 50px; 
+}
+
+.header-search {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-profile {
+  width: 25%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.sidebar-area{ 
+    width: 10%; 
+    margin-left: 10%; 
+}
+
+.post-area { 
+    width: 50%; 
+}
+
+.friends-area{ 
+    width: 20%;  
+    margin-right: 10%; 
+}
+
+.sidebar-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.sidebar-item{
+  margin-bottom: 8px;
+}
+
+.sidebar-item > img{ 
+  width: 36px; 
+  height: 36px; 
+  border-radius: 5px;
+}
+
+.post{
+  background: PaleGreen;
+  width: 87%;
+  margin: 5px 2%;
+  padding: 0% 5%;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.post-title{
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.post-banner > img { 
+    width: 100%; 
+}
+
+.post-like { 
+    margin-bottom: 15px;
+}
+
+.post-like > img { 
+    width: 36px; 
+    height: 36px; 
+}
+
+.friends{ 
+  margin: 5px; 
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.friend-header{ 
+  text-align: center;
+  background-color: BlanchedAlmond; 
+  border-radius: 15px 15px 0px 0px;
+  width: 100%;
+}
+
+.friend-parent{ 
+  display: flex; 
+  padding-left: 12.5%; 
+  padding-right: 12.5%; 
+}
+
+.friend-item{ 
+    width: 33.3%; 
+    text-align: center;
+}
+
+.friend-item > img { 
+    width: 50%; 
+}

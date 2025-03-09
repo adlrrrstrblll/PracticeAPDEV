@@ -1,0 +1,50 @@
+<!-- main.hbs file -->
+<div class="main">
+  <div class="side-game">
+    <div class="side-item side-item-header"><h3>SOLUTION</h3></div>
+    <!-- Add Solution to side bar here -->
+    {{#each solution}}
+      <div class="side-item">From <b>{{from}}</b> to <b>{{to}}</b>.</div>
+    {{/each}}
+    <!-- upto here -->
+  </div>
+  <div class="game-container">
+    <div id="win-message">
+      <h1>PLAYER WIN!!!</h1>
+    </div>
+    <div class="main-game">
+      <div class="glass-container">
+        <div id="glass1" class="glass">
+          <div class="glass-fill"></div>
+          <div class="glass-fill"></div>
+          <div class="glass-fill"></div>
+          <div class="glass-fill"></div>
+          <div class="glass-fill"></div>
+          <div class="glass-fill"></div>
+          <div class="glass-fill"></div>
+          <div class="glass-fill"></div>
+        </div>
+      </div>
+      <div class="glass-container">
+        <div id="glass2" class="glass"></div>
+      </div>
+      <div class="glass-container">
+        <div id="glass3" class="glass"></div>
+      </div>
+    </div>
+    <div class="game-input">
+      <h3>Game Input</h3> <hr/>
+      From <select id="from-input">
+        <option value="1">Glass 1</option>
+        <option value="2">Glass 2</option>
+        <option value="3">Glass 3</option>
+      </select> to <select id="to-input">
+        <option value="1">Glass 1</option>
+        <option value="2">Glass 2</option>
+        <option value="3">Glass 3</option>
+      </select>
+      <button id="pour-button">Pour</button>
+    </div>
+  </div>
+</div>
+

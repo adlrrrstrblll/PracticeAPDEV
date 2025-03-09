@@ -1,0 +1,31 @@
+<!-- main -->
+<div class="main">
+  <div class="center">
+    <h1>Contact list!</h1>
+  </div>
+  <div class="item-parent">
+  {{#each contact_list}}
+    <div class="item-row {{#if isFriend}}colorFriend{{else if isEnemy}}colorEnemy{{else}}colorAquaintance{{/if}}">
+      <div class="item-img">
+        {{!-- Friend --}}
+        {{#if isFriend}}
+        <img src="https://openclipart.org/image/800px/245844" />
+
+        {{!-- Enemy --}}
+        {{else if isEnemy}}
+        <img src="https://openclipart.org/image/800px/245849" />
+
+        {{!-- Acquaintance --}}
+        {{else}}
+        <img src="https://openclipart.org/image/800px/245847" />
+        {{/if}}
+
+      </div>
+      <div class="item-desc">
+        <div class="item-name">{{name}}</div>
+        <div class="item-contact">{{contact}}</div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+</div>
