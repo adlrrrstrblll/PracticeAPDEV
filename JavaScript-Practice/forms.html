@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error {
+            background-color: #ffcccc;
+            border: 1px solid red;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="userForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword">
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <div style="width: 25%; margin-top: 20px;">
+        <button type="button" onclick="fade()" style="background-color:red;">You want food?</button>
+        <img src="jolibee.jpg" id="img1" style="display: none; width: 50%; height: 50%">
+    </div>
+
+    <div style="width: 25%;">
+        <button id="updateAttributes" style="height: 80px; width: 300px; background-color: black;">Select a Character</button>
+        <img id="myImage" src="mario.jpeg" title="Original Image" alt="Image One" width="300">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function validateForm() {
+            let firstName = document.getElementById("firstName");
+            let lastName = document.getElementById("lastName");
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+            let confirmPassword = document.getElementById("confirmPassword");
+
+            let isValid = true;
+            let fields = [firstName, lastName, email, password, confirmPassword];
+
+            // Reset error styles
+            fields.forEach(field => field.classList.remove("error"));
+
+            // Check for empty fields
+            fields.forEach(field => {
+                if (field.value.trim() === "") {
+                    field.classList.add("error");
+                    isValid = false;
+                }
+            });
+
+            // Check if passwords match
+            if (password.value !== confirmPassword.value) {
+                password.classList.add("error");
+                confirmPassword.classList.add("error");
+                isValid = false;
+            }
+
+            // If valid, greet and redirect
+            if (isValid) {
+                alert(`Hello ${firstName.value} ${lastName.value}!`);
+                window.location.href = "https://www.google.com";
+            }
+        }
+
+        function fade(){
+            $("#img1").fadeToggle();
+        }
+
+        $(document).ready(function() {
+            let originalSrc = $("#myImage").attr("src");
+            let originalTitle = $("#myImage").attr("title");
+            let originalAlt = $("#myImage").attr("alt");
+
+            let newSrc = "yoshi.jpeg";
+            let newTitle = "Yoshi";
+            let newAlt = "Yoshi";
+
+            let isOriginal = true;
+
+            $("#updateAttributes").click(function() {
+                if (isOriginal) {
+                    $("#myImage").attr({
+                        "src": newSrc,
+                        "title": newTitle,
+                        "alt": newAlt
+                    });
+                } else {
+                    $("#myImage").attr({
+                        "src": originalSrc,
+                        "title": originalTitle,
+                        "alt": originalAlt
+                    });
+                }
+                isOriginal = !isOriginal; // Toggle state
+            });
+        });
+    </script>
+
+</body>
+</html>
